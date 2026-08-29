@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Memory Challenge</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HOME SCREEN
+    ====================================================== -->
+
+    <section id="homeScreen" class="screen home-screen">
+
+        <div class="home-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="logo">🧠</div>
+
+            <h1>MEMORY CHALLENGE</h1>
+
+            <p>
+                Test your memory, observation and thinking skills!
+            </p>
+
+            <div class="home-rules">
+
+                <div class="rule-card">
+                    <span>🎯</span>
+                    <strong>3 Levels</strong>
+                </div>
+
+                <div class="rule-card">
+                    <span>❓</span>
+                    <strong>9 Questions</strong>
+                </div>
+
+                <div class="rule-card">
+                    <span>🏆</span>
+                    <strong>100 Marks</strong>
+                </div>
+
+            </div>
+
+            <button class="start-btn"
+                    onclick="startGame()">
+
+                START GAME 🚀
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GAME SCREEN
+    ====================================================== -->
+
+    <section id="gameScreen"
+             class="screen game-screen hidden">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="game-logo">
+                🧠 Memory Challenge
+            </div>
+
+            <div class="level-name"
+                 id="levelTitle">
+
+                Level 1
+
+            </div>
+
+            <div class="score-box">
+
+                Score:
+                <span id="totalScore">0</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-area">
+
+            <div id="questionNumber">
+                Question 1 / 3
+            </div>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"
+                     class="progress-fill">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY AREA -->
+
+        <div id="memoryArea"
+             class="memory-area">
+
+            <h2 id="memoryInstruction">
+                Remember these pictures!
+            </h2>
+
+
+            <div id="countdown"
+                 class="countdown">
+            </div>
+
+
+            <div id="imageContainer"
+                 class="image-container">
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION AREA -->
+
+        <div id="questionArea"
+             class="question-area hidden">
+
+            <div class="question-card">
+
+                <h2 id="questionText">
+                    Question
+                </h2>
+
+                <div id="optionsContainer"
+                     class="options-container">
+                </div>
+
+
+                <div id="feedback"
+                     class="feedback">
+                </div>
+
+
+                <button id="nextButton"
+                        class="next-btn hidden"
+                        onclick="nextQuestion()">
+
+                    NEXT ➜
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         LEVEL COMPLETE SCREEN
+    ====================================================== -->
+
+    <section id="levelCompleteScreen"
+             class="screen completion-screen hidden">
+
+        <div class="completion-content">
+
+            <div class="completion-icon">
+                🏆
+            </div>
+
+            <h1 id="completeTitle">
+                LEVEL 1 COMPLETED!
+            </h1>
+
+            <p id="levelScoreText">
+                Level Score: 30 / 30
+            </p>
+
+            <button id="continueButton"
+                    class="continue-btn"
+                    onclick="continueGame()">
+
+                GO TO LEVEL 2
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL SCORE SCREEN
+    ====================================================== -->
+
+    <section id="finalScreen"
+             class="screen final-screen hidden">
+
+        <div class="final-content">
+
+            <div class="final-trophy">
+                🏆
+            </div>
+
+            <h1>GAME COMPLETED!</h1>
+
+            <p class="final-message">
+                Amazing! You completed all three levels.
+            </p>
+
+            <div class="final-score-box">
+
+                <span>YOUR FINAL SCORE</span>
+
+                <strong id="finalScore">
+                    0 / 130
+                </strong>
+
+            </div>
+
+            <button class="restart-btn"
+                    onclick="restartGame()">
+
+                🔄 PLAY AGAIN
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SPARKLE CONTAINER
+    ====================================================== -->
+
+    <div id="sparkles"></div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="music/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
